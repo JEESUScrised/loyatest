@@ -121,11 +121,11 @@ git push -u origin main
    - Оставьте: `npm install`
    - Или если пусто - введите: `npm install`
 
-6. **Node.js Version (опционально, но рекомендуется):**
+6. **Node.js Version (рекомендуется):**
    - В настройках проекта Vercel → Settings → General
    - Найдите раздел "Node.js Version"
-   - Установите: `18.x` или `20.x`
-   - Или оставьте автоматическое определение (Vercel прочитает `.nvmrc` файл)
+   - Установите: `20.x` (рекомендуется) или `22.x`
+   - Или оставьте автоматическое определение (Vercel прочитает `.nvmrc` файл с версией 20)
 
 **Примечание:** Если в репозитории есть файл `vercel.json`, он может конфликтовать с этими настройками. В таком случае либо удалите его, либо переименуйте в `vercel.json.backup`.
 
@@ -273,7 +273,7 @@ REACT_APP_API_URL=https://your-backend-url.com/api
 **Решение:**
 
 1. **Убедитесь, что в проекте есть `.nvmrc` файл:**
-   - Файл `.nvmrc` уже создан в `frontends/client/.nvmrc` с версией `18`
+   - Файл `.nvmrc` уже создан в `frontends/client/.nvmrc` с версией `20`
    - Закоммитьте его:
      ```bash
      git add frontends/client/.nvmrc frontends/client/package.json
@@ -287,7 +287,7 @@ REACT_APP_API_URL=https://your-backend-url.com/api
    - **Build Command:** `npm run build` (теперь включает `CI=false`)
    - **Output Directory:** `build`
    - **Install Command:** `npm install`
-   - **Node.js Version:** `18.x` (в Settings → General)
+   - **Node.js Version:** `20.x` (в Settings → General) ⚠️ **Важно выбрать версию 20!**
 
 3. **Если в репозитории есть `vercel.json`, удалите или переименуйте его:**
    ```bash
