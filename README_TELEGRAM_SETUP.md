@@ -118,8 +118,8 @@ git push -u origin main
    - Или если пусто - введите: `build`
 
 5. **Install Command:** 
-   - Оставьте: `npm install`
-   - Или если пусто - введите: `npm install`
+   - Введите: `npm install --legacy-peer-deps`
+   - Это важно для правильной установки зависимостей и избежания проблем с правами доступа
 
 6. **Node.js Version (рекомендуется):**
    - В настройках проекта Vercel → Settings → General
@@ -308,14 +308,33 @@ REACT_APP_API_URL=https://your-backend-url.com/api
 
 **Если ошибка "Permission denied" все еще возникает:**
 
-Попробуйте изменить **Install Command** в Vercel на:
+Проблема в том, что зависимости устанавливаются в корне репозитория из-за workspaces. Попробуйте следующие решения:
+
+**Решение A: Обновить Install Command (рекомендуется):**
 ```
-npm install --legacy-peer-deps && chmod +x node_modules/.bin/*
+rm -rf node_modules package-lock.json && npm install --legacy-peer-deps
 ```
 
-Или используйте альтернативную команду build:
+**Решение B: Обновить Build Command:**
 ```
-CI=false NODE_OPTIONS=--openssl-legacy-provider npx react-scripts build
+CI=false NODE_OPTIONS=--openssl-legacy-provider npx --yes react-scripts build
+```
+
+**Решение C: Использовать полный путь к react-scripts:**
+В Build Command:
+```
+CI=false node node_modules/.bin/react-scripts build
+```
+
+**Решение D: Отключить workspaces для этого проекта:**
+Создайте файл `.npmrc` в `frontends/client/` с содержимым:
+```
+legacy-peer-deps=true
+```
+
+Затем в Install Command:
+```
+npm install --legacy-peer-deps
 ```
 
 **Решение 3 (если ничего не помогает):**
