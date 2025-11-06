@@ -284,9 +284,9 @@ REACT_APP_API_URL=https://your-backend-url.com/api
 2. **В настройках проекта Vercel:**
    - **Root Directory:** `frontends/client` ⚠️ **Это самое важное!**
    - **Framework Preset:** `Create React App`
-   - **Build Command:** `npm run build` (теперь включает `CI=false`)
+   - **Build Command:** `npm run build` (теперь использует `npx react-scripts build` с `CI=false`)
    - **Output Directory:** `build`
-   - **Install Command:** `npm install`
+   - **Install Command:** `npm install --legacy-peer-deps` (или просто `npm install`)
    - **Node.js Version:** `20.x` (в Settings → General) ⚠️ **Важно выбрать версию 20!**
 
 3. **Если в репозитории есть `vercel.json`, удалите или переименуйте его:**
@@ -303,7 +303,20 @@ REACT_APP_API_URL=https://your-backend-url.com/api
 **Почему это работает:** 
 - `.nvmrc` указывает Vercel использовать правильную версию Node.js
 - `CI=false` в команде build отключает CI режим, который может вызывать проблемы
+- `npx` перед `react-scripts` гарантирует правильное выполнение скрипта даже при проблемах с правами доступа
 - Указав `frontends/client` как Root Directory, Vercel работает с этой папкой как с обычным React-проектом
+
+**Если ошибка "Permission denied" все еще возникает:**
+
+Попробуйте изменить **Install Command** в Vercel на:
+```
+npm install --legacy-peer-deps && chmod +x node_modules/.bin/*
+```
+
+Или используйте альтернативную команду build:
+```
+CI=false NODE_OPTIONS=--openssl-legacy-provider npx react-scripts build
+```
 
 **Решение 3 (если ничего не помогает):**
 1. Убедитесь, что проект собирается локально:
