@@ -1,0 +1,17 @@
+{
+  "id": 6,
+  "venueCode": "BREAD",
+  "name": "Пекарня «Свежий хлеб»",
+  "description": "Свежая выпечка и хлеб",
+  "address": "ул. Садовая, 12",
+  "logo": "/assets/brands/bread.svg",
+  "category": "cafe",
+  "rating": 4.5,
+  "workingHours": "06:00 - 20:00",
+  "isOpen": true,
+  "pointsPerPurchase": 2,
+  "pointsType": "general",
+  "doublePointsHours": [],
+  "menu": []
+}
+

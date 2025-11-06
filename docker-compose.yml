@@ -1,0 +1,116 @@
+version: '3.8'
+
+services:
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb://mongo:27017/loya
+      - JWT_SECRET=your-jwt-secret-key
+    depends_on:
+      - mongo
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    networks:
+      - loya-network
+
+  # MongoDB
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - loya-network
+
+  # Client Frontend
+  client:
+    build:
+      context: ./frontends/client
+      dockerfile: Dockerfile
+    ports:
+      - "3001:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:3000/api
+      - REACT_APP_ENV=development
+    depends_on:
+      - backend
+    networks:
+      - loya-network
+
+  # Cashier Frontend
+  cashier:
+    build:
+      context: ./frontends/cashier
+      dockerfile: Dockerfile
+    ports:
+      - "3002:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:3000/api
+      - REACT_APP_ENV=development
+    depends_on:
+      - backend
+    networks:
+      - loya-network
+
+  # Venue Admin Frontend
+  venue-admin:
+    build:
+      context: ./frontends/venue-admin
+      dockerfile: Dockerfile
+    ports:
+      - "3003:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:3000/api
+      - REACT_APP_ENV=development
+    depends_on:
+      - backend
+    networks:
+      - loya-network
+
+  # Tech Admin Frontend
+  tech-admin:
+    build:
+      context: ./frontends/tech-admin
+      dockerfile: Dockerfile
+    ports:
+      - "3004:80"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:3000/api
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    networks:
+      - loya-network
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - client
+      - cashier
+      - venue-admin
+      - tech-admin
+    networks:
+      - loya-network
+
+volumes:
+  mongo_data:
+
+networks:
+  loya-network:
+    driver: bridge

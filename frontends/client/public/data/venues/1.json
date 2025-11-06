@@ -1,0 +1,126 @@
+{
+  "id": 1,
+  "venueCode": "MAM",
+  "name": "Пиццерия «Мама Мия»",
+  "description": "Итальянская кухня с домашней атмосферой",
+  "address": "ул. Ленина, 15",
+  "logo": "/assets/brands/mamamia.svg",
+  "category": "restaurant",
+  "rating": 4.8,
+  "workingHours": "10:00 - 23:00",
+  "isOpen": true,
+  "pointsPerPurchase": 5,
+  "pointsType": "general",
+  "doublePointsHours": [
+    {
+      "day": "monday",
+      "start": "14:00",
+      "end": "16:00"
+    },
+    {
+      "day": "tuesday",
+      "start": "14:00",
+      "end": "16:00"
+    },
+    {
+      "day": "wednesday",
+      "start": "14:00",
+      "end": "16:00"
+    },
+    {
+      "day": "thursday",
+      "start": "14:00",
+      "end": "16:00"
+    },
+    {
+      "day": "friday",
+      "start": "14:00",
+      "end": "16:00"
+    },
+    {
+      "day": "saturday",
+      "start": "12:00",
+      "end": "15:00"
+    },
+    {
+      "day": "sunday",
+      "start": "12:00",
+      "end": "15:00"
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "name": "Маргарита",
+      "description": "Классическая пицца с томатами, моцареллой и базиликом",
+      "category": "Пицца",
+      "price": 450,
+      "pointsCost": 90,
+      "pointsReward": 5,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/pizza-margarita.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Пепперони",
+      "description": "Острая пицца с колбасой пепперони и сыром",
+      "category": "Пицца",
+      "price": 520,
+      "pointsCost": 104,
+      "pointsReward": 5,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/pizza-pepperoni.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Четыре сыра",
+      "description": "Пицца с моцареллой, горгонзолой, пармезаном и рикоттой",
+      "category": "Пицца",
+      "price": 580,
+      "pointsCost": 116,
+      "pointsReward": 5,
+      "isAvailable": true,
+      "isPopular": false,
+      "image": "/images/pizza-four-cheese.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Карбонара",
+      "description": "Паста с беконом, яйцом и пармезаном",
+      "category": "Паста",
+      "price": 380,
+      "pointsCost": 76,
+      "pointsReward": 5,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/pasta-carbonara.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Тирамису",
+      "description": "Классический итальянский десерт",
+      "category": "Десерты",
+      "price": 280,
+      "pointsCost": 56,
+      "pointsReward": 5,
+      "isAvailable": true,
+      "isPopular": false,
+      "image": "/images/tiramisu.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Капуччино",
+      "description": "Эспрессо с молочной пеной",
+      "category": "Напитки",
+      "price": 180,
+      "pointsCost": 36,
+      "pointsReward": 5,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/cappuccino.jpg"
+    }
+  ]
+}
+

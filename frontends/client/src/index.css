@@ -1,0 +1,682 @@
+:root{
+  --bg:#0b1118; --card:#101924cc; --text:#e8eef4; --muted:#9fb2c3; --border:#203040;
+  --accent:#64d8cb; --accent2:#b39ddb; --gold1:#ffd778; --gold2:#ffb020;
+  --radius:16px; --gap:16px; --shadow:0 16px 40px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html,body{height:100%} 
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.45 Inter,system-ui,-apple-system,Segoe UI,Roboto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container{max-width:100%;margin:0 auto;padding:16px;height:100%;display:flex;flex-direction:column;overflow:hidden}
+.header{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+.hero{height:64px}
+.sub{color:var(--muted)}
+h1,h2,h3{margin:0 0 12px; color:var(--text)} h1{font-size:28px} h2{font-size:22px} h3{font-size:18px}
+.grid{display:grid;gap:16px} .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;backdrop-filter:blur(10px);flex:1;display:flex;flex-direction:column;overflow:hidden}
+
+/* Full height card */
+.full-height-card {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 120px); /* Вычитаем высоту header и отступы */
+  position: relative;
+}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+/* Palette alignment */
+.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start}
+.swatch{display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
+.swatch .box{width:160px;height:96px;border-radius:24px;border:1px solid rgba(255,255,255,.08)}
+/* Buttons */
+.btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0b0f14;border:0;border-radius:14px;padding:12px 16px;font-weight:700;letter-spacing:.2px;
+  box-shadow:0 8px 22px rgba(100,216,203,.25);cursor:pointer;transition:filter .15s, transform .06s, box-shadow .2s}
+.btn:hover{filter:brightness(1.08);box-shadow:0 12px 28px rgba(179,157,219,.3)} .btn:active{transform:translateY(1px) scale(.98);filter:brightness(.95)}
+.btn.secondary{background:#0f1720;border:1px solid #203040;color:#e8eef4}
+.input{flex:1;min-width:260px;background:#0f1720;border:1px solid var(--border);color:#e8eef4;padding:12px 14px;border-radius:14px;outline:none}
+.input::placeholder{color:#7f93a6}
+.actions{display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);padding:12px;border-radius:16px}
+.action{position:relative;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;background:#0e1620;border:1px solid #22313f;color:#e8eef4;font-weight:600;overflow:hidden;cursor:pointer;transition:transform .06s}
+.action::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(100,216,203,.09),transparent);transform:translateX(-100%);transition:transform .6s}
+.action:hover::before{transform:translateX(0)} .action:hover{box-shadow:0 8px 20px rgba(100,216,203,.08)} .action:active{transform:translateY(1px) scale(.99)}
+.action .hint{margin-left:auto;color:#9fb2c3;font-size:12px}
+.list-item{display:flex;gap:12px;align-items:center;padding:14px;border:1px solid rgba(255,255,255,.08);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:var(--text);cursor:pointer;transition:transform .06s, box-shadow .2s}
+.list-item:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(100,216,203,.08)}
+.list-item:active{transform:translateY(0) scale(.99)}
+.list-item img.brand{width:48px;height:48px}
+.list-item .meta{margin-left:auto;text-align:right;color:var(--muted)}
+.tabbar{display:flex;gap:8px;background:#0c131acc;border:1px solid rgba(255,255,255,.08);padding:10px;border-radius:14px}
+.tabbar button{flex:1;background:transparent;color:#9fb2c3;border:0;border-radius:12px;padding:8px 6px;cursor:pointer}
+.tabbar button.active{color:#e8eef4;position:relative}
+.tabbar button.active::after{content:'';position:absolute;bottom:6px;left:50%;transform:translateX(-50%);height:2px;width:28px;background:var(--accent);border-radius:2px;box-shadow:0 0 8px rgba(100,216,203,.6)}
+
+/* Mobile tabbar styles */
+.mobile-tabbar {
+  margin-top: auto; /* Прижимаем к низу карточки */
+  border-radius: 14px;
+  background: #0c131acc;
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 8px 12px;
+}
+
+.mobile-tabbar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  min-height: 50px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tab-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Remove mobile layout padding since tabbar is now inside card */
+body.mobile-layout {
+  padding-bottom: 0;
+}
+.badge{position:relative;display:inline-flex;gap:6px;align-items:center;padding:7px 10px;border-radius:999px;background:rgba(100,216,203,.12);color:#aef2ea;border:1px solid #224b48;overflow:hidden}
+.badge::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:var(--progress,0%);background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 0 8px rgba(100,216,203,.6)}
+.badge.warn{background:rgba(255,176,32,.14);color:#ffcf7a;border:1px solid #4b3715}
+.progress{height:10px;background:#17212b;border-radius:999px;overflow:hidden}
+.progress>div{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s ease-in-out;}
+/* FIX #1: Admin stat cards style */
+.stat{display:flex;flex-direction:column;justify-content:center;align-items:center;height:120px;border-radius:24px;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.stat .label{color:var(--muted);margin-bottom:6px;font-weight:600}
+.stat .value{font-size:28px;font-weight:800;color:#e8eef4}
+/* FIX #2: icons row sizing/wrapping */
+.icons-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.icons-row img, .icons-row svg{flex:0 0 auto;width:48px;height:48px}
+
+/* Cashier specific styles */
+.cashier {
+  text-align: center;
+}
+
+.code {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 16px 0;
+  letter-spacing: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Mobile-first responsive design */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px 12px;
+}
+
+/* Mobile styles (default) */
+
+.full-height-card {
+  min-height: calc(100vh - 40px); /* Учитываем только отступы контейнера */
+}
+
+/* Увеличиваем размеры элементов внутри карточки */
+.full-height-card .list-item {
+  padding: 28px;
+  min-height: 100px;
+  margin-bottom: 24px;
+}
+
+.full-height-card .list-item img {
+  width: 48px;
+  height: 48px;
+}
+
+.full-height-card .input {
+  padding: 24px 28px;
+  font-size: 22px;
+  min-height: 72px;
+}
+
+.full-height-card .btn {
+  padding: 24px 32px;
+  font-size: 22px;
+  min-height: 72px;
+}
+
+.full-height-card .action {
+  padding: 36px 32px;
+  min-height: 100px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.full-height-card .action .hint {
+  font-size: 18px;
+}
+
+.full-height-card .badge {
+  font-size: 16px;
+  padding: 10px 14px;
+}
+
+.full-height-card .points-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Стили для кассира */
+.full-height-card .cashier {
+  text-align: center;
+  padding: 20px;
+}
+
+.full-height-card .code {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 20px 0;
+  letter-spacing: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.full-height-card .time-left {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+/* Стили для статистических карточек */
+.full-height-card .stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.full-height-card .stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.45);
+}
+
+.full-height-card .stat .label {
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.full-height-card .stat .value {
+  font-size: 28px;
+  font-weight: 800;
+  color: #e8eef4;
+}
+
+.full-height-card h3 {
+  font-size: 32px;
+  margin-bottom: 32px;
+  color: var(--text);
+}
+
+/* Увеличиваем отступы между секциями */
+.full-height-card .row {
+  margin: 28px 0;
+}
+
+.full-height-card .actions {
+  margin: 32px 0;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+.card {
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.row {
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.input {
+  min-width: auto;
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
+.btn {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+}
+
+.actions {
+  gap: 12px;
+  padding: 12px;
+}
+
+.action {
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+.action .hint {
+  font-size: 11px;
+}
+
+.tabbar {
+  gap: 4px;
+  padding: 8px;
+}
+
+.tabbar button {
+  padding: 10px 8px;
+  font-size: 14px;
+}
+
+.list-item {
+  padding: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.list-item > div {
+  width: 100%;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 6px 8px;
+}
+
+/* Hide mobile tabbar on desktop */
+@media (min-width: 768px) {
+  .mobile-tabbar {
+    display: none;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .container {
+    max-width: 1040px;
+    padding: 32px 20px;
+  }
+  
+  .full-height-card {
+    min-height: calc(100vh - 80px); /* Учитываем только отступы контейнера */
+  }
+  
+  /* Увеличиваем размеры для планшетов */
+  .full-height-card .list-item {
+    padding: 32px;
+    min-height: 120px;
+    margin-bottom: 28px;
+  }
+  
+  .full-height-card .list-item img {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .full-height-card .input {
+    padding: 28px 32px;
+    font-size: 24px;
+    min-height: 80px;
+  }
+  
+  .full-height-card .btn {
+    padding: 28px 36px;
+  font-size: 24px;
+    min-height: 80px;
+  }
+  
+  .full-height-card .action {
+    padding: 40px 36px;
+    min-height: 110px;
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  
+  .full-height-card .action .hint {
+    font-size: 20px;
+  }
+  
+  .full-height-card .badge {
+    font-size: 18px;
+    padding: 12px 16px;
+  }
+  
+  .full-height-card .points-text {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  
+  /* Стили для кассира - планшеты */
+  .full-height-card .cashier {
+    padding: 24px;
+  }
+  
+  .full-height-card .code {
+    font-size: 36px;
+    margin: 24px 0;
+  }
+  
+  .full-height-card .time-left {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  /* Статистические карточки - планшеты */
+  .full-height-card .stat {
+    height: 140px;
+  }
+  .full-height-card .stat .label {
+    font-size: 16px;
+  }
+  .full-height-card .stat .value {
+  font-size: 32px;
+}
+
+  .full-height-card h3 {
+    font-size: 36px;
+    margin-bottom: 36px;
+    color: var(--text);
+  }
+  
+  /* Увеличиваем отступы между секциями для планшетов */
+  .full-height-card .row {
+    margin: 32px 0;
+  }
+  
+  .full-height-card .actions {
+    margin: 36px 0;
+  }
+  
+  
+  h2 {
+    font-size: 22px;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+  
+  .card {
+    padding: 16px;
+  }
+  
+  .row {
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .input {
+    min-width: 260px;
+    width: auto;
+  }
+  
+  .btn {
+    width: auto;
+}
+
+.actions {
+    gap: 14px;
+    padding: 16px;
+  }
+  
+  .action {
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+  
+  .action .hint {
+    font-size: 12px;
+  }
+  
+  .tabbar {
+    gap: 8px;
+    padding: 10px;
+  }
+  
+  .tabbar button {
+    padding: 8px 6px;
+    font-size: 16px;
+  }
+  
+  .list-item {
+    padding: 14px;
+    flex-direction: row;
+    align-items: center;
+  gap: 12px;
+}
+
+  .list-item > div {
+    width: auto;
+  }
+  
+  .badge {
+    font-size: 14px;
+    padding: 7px 10px;
+  }
+  
+  .grid.cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .container {
+    padding: 40px 20px;
+  }
+  
+  .full-height-card {
+    min-height: calc(100vh - 100px); /* Учитываем только отступы контейнера */
+  }
+  
+  /* Увеличиваем размеры для десктопов */
+  .full-height-card .list-item {
+    padding: 36px;
+    min-height: 140px;
+    margin-bottom: 32px;
+  }
+  
+  .full-height-card .list-item img {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .full-height-card .input {
+    padding: 32px 36px;
+    font-size: 26px;
+    min-height: 88px;
+  }
+  
+  .full-height-card .btn {
+    padding: 32px 40px;
+    font-size: 26px;
+    min-height: 88px;
+  }
+  
+  .full-height-card .action {
+    padding: 44px 40px;
+    min-height: 120px;
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+  
+  .full-height-card .action .hint {
+    font-size: 22px;
+  }
+  
+  .full-height-card .badge {
+    font-size: 20px;
+    padding: 14px 18px;
+  }
+  
+  .full-height-card .points-text {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  
+  /* Стили для кассира - десктопы */
+  .full-height-card .cashier {
+    padding: 28px;
+  }
+  
+  .full-height-card .code {
+    font-size: 40px;
+    margin: 28px 0;
+  }
+  
+  .full-height-card .time-left {
+    font-size: 20px;
+    margin: 12px 0;
+  }
+  
+  /* Статистические карточки - десктопы */
+  .full-height-card .stat {
+    height: 160px;
+  }
+  .full-height-card .stat .label {
+    font-size: 18px;
+  }
+  .full-height-card .stat .value {
+    font-size: 36px;
+  }
+  
+  .full-height-card h3 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: var(--text);
+  }
+  
+  /* Увеличиваем отступы между секциями для десктопов */
+  .full-height-card .row {
+    margin: 36px 0;
+  }
+  
+  .full-height-card .actions {
+    margin: 40px 0;
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 767px) {
+  /* Touch-friendly button sizes */
+  .btn, .action, .tabbar button {
+    min-height: 44px; /* iOS recommended touch target */
+  }
+  
+  /* Better spacing for mobile */
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  /* Optimize text sizes for mobile reading */
+  .sub {
+    font-size: 14px;
+  }
+  
+  /* Better list item layout on mobile */
+  .list-item {
+    text-align: left;
+  }
+  
+  .list-item img {
+    align-self: flex-start;
+  }
+  
+  /* Full-width inputs on mobile */
+  .input {
+    box-sizing: border-box;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Better badge positioning on mobile */
+  .badge {
+    margin-top: 4px;
+    align-self: flex-start;
+  }
+  
+  /* Hide desktop tabbar on mobile */
+  .tabbar:not(.mobile-tabbar) {
+    display: none;
+  }
+  
+  /* Better touch targets for actions */
+  .action {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Improve form layout on mobile */
+  .row {
+    gap: 12px;
+  }
+  
+  /* Better visual hierarchy on mobile */
+  h3 {
+    margin-bottom: 16px;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 767px) and (orientation: landscape) {
+  .header {
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .hero {
+    height: 40px;
+  }
+  
+  h1 {
+    font-size: 20px;
+  }
+  
+  .card {
+    padding: 10px;
+  }
+}

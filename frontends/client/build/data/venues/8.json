@@ -1,0 +1,17 @@
+{
+  "id": 8,
+  "venueCode": "COZY",
+  "name": "Кафе «Уют»",
+  "description": "Уютное кафе с домашней атмосферой",
+  "address": "ул. Центральная, 45",
+  "logo": "/assets/brands/cozy.svg",
+  "category": "cafe",
+  "rating": 4.3,
+  "workingHours": "08:00 - 21:00",
+  "isOpen": false,
+  "pointsPerPurchase": 3,
+  "pointsType": "general",
+  "doublePointsHours": [],
+  "menu": []
+}
+

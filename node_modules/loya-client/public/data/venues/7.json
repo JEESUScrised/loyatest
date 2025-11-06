@@ -1,0 +1,28 @@
+{
+  "id": 7,
+  "venueCode": "ITALY",
+  "name": "Ресторан «Италия»",
+  "description": "Аутентичная итальянская кухня",
+  "address": "ул. Итальянская, 33",
+  "logo": "/assets/brands/italy.svg",
+  "category": "restaurant",
+  "rating": 4.8,
+  "workingHours": "12:00 - 24:00",
+  "isOpen": true,
+  "pointsPerPurchase": 7,
+  "pointsType": "personal",
+  "doublePointsHours": [
+    {
+      "day": "tuesday",
+      "start": "15:00",
+      "end": "18:00"
+    },
+    {
+      "day": "thursday",
+      "start": "15:00",
+      "end": "18:00"
+    }
+  ],
+  "menu": []
+}
+

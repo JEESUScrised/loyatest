@@ -1,0 +1,43 @@
+{
+  "name": "loya-cashier",
+  "version": "1.0.0",
+  "description": "Loya Cashier Frontend - Telegram Mini App for cashiers",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.13.2",
+    "html5-qrcode": "^2.3.8",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.26",
+    "@types/react-dom": "^18.3.7",
+    "autoprefixer": "^10.4.0",
+    "cross-env": "^10.1.0",
+    "postcss": "^8.4.0",
+    "react-scripts": "5.0.1",
+    "tailwindcss": "^3.2.0",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "start": "cross-env GENERATE_SOURCEMAP=false react-scripts start",
+    "dev": "cross-env GENERATE_SOURCEMAP=false react-scripts start",
+    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

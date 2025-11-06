@@ -1,0 +1,48 @@
+{
+  "name": "loya-monorepo",
+  "version": "1.0.0",
+  "description": "Loya Loyalty System - Monorepo for 4 frontends",
+  "private": true,
+  "workspaces": [
+    "frontends/*",
+    "shared"
+  ],
+  "scripts": {
+    "install:all": "npm install",
+    "dev:client": "cd frontends/client && npm start",
+    "dev:cashier": "cd frontends/cashier && npm start",
+    "dev:venue-admin": "cd frontends/venue-admin && npm start",
+    "dev:tech-admin": "cd frontends/tech-admin && npm run dev",
+    "build:shared": "cd shared && npm run build",
+    "build:all": "npm run build:shared && npm run build --workspaces",
+    "build:client": "cd frontends/client && npm run build",
+    "build:cashier": "cd frontends/cashier && npm run build",
+    "build:venue-admin": "cd frontends/venue-admin && npm run build",
+    "build:tech-admin": "cd frontends/tech-admin && npm run build",
+    "clean": "rm -rf node_modules frontends/*/node_modules shared/node_modules"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^4.9.5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "loyalty",
+    "telegram",
+    "mini-app",
+    "monorepo",
+    "react",
+    "nextjs"
+  ],
+  "author": "Loya Team",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "ajv-keywords": "^3.5.2",
+    "choco": "^0.2.1",
+    "git": "^0.1.5"
+  }
+}

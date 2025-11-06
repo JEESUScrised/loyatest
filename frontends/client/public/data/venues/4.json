@@ -1,0 +1,65 @@
+{
+  "id": 4,
+  "venueCode": "SAK",
+  "name": "Суши-бар «Сакура»",
+  "description": "Свежие суши и роллы",
+  "address": "ул. Пушкина, 25",
+  "logo": "/assets/brands/sakura.svg",
+  "category": "restaurant",
+  "rating": 4.9,
+  "workingHours": "12:00 - 23:00",
+  "isOpen": true,
+  "pointsPerPurchase": 6,
+  "pointsType": "personal",
+  "doublePointsHours": [
+    {
+      "day": "wednesday",
+      "start": "15:00",
+      "end": "18:00"
+    },
+    {
+      "day": "saturday",
+      "start": "13:00",
+      "end": "17:00"
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "name": "Филадельфия",
+      "description": "Ролл с лососем, сыром и огурцом",
+      "category": "Роллы",
+      "price": 420,
+      "pointsCost": 84,
+      "pointsReward": 6,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/philadelphia.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Калифорния",
+      "description": "Ролл с крабом и авокадо",
+      "category": "Роллы",
+      "price": 380,
+      "pointsCost": 76,
+      "pointsReward": 6,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/california.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Сашими из лосося",
+      "description": "Свежий лосось, нарезанный слайсами",
+      "category": "Сашими",
+      "price": 450,
+      "pointsCost": 90,
+      "pointsReward": 6,
+      "isAvailable": true,
+      "isPopular": false,
+      "image": "/images/sashimi.jpg"
+    }
+  ]
+}
+

@@ -1,0 +1,116 @@
+{
+  "id": 2,
+  "venueCode": "BOD",
+  "name": "Кофейня «Бодрость»",
+  "description": "Свежий кофе и десерты",
+  "address": "пр. Мира, 42",
+  "logo": "/assets/brands/bodrost.svg",
+  "category": "cafe",
+  "rating": 4.6,
+  "workingHours": "07:00 - 22:00",
+  "isOpen": true,
+  "pointsPerPurchase": 3,
+  "pointsType": "personal",
+  "doublePointsHours": [
+    {
+      "day": "monday",
+      "start": "08:00",
+      "end": "10:00"
+    },
+    {
+      "day": "tuesday",
+      "start": "08:00",
+      "end": "10:00"
+    },
+    {
+      "day": "wednesday",
+      "start": "08:00",
+      "end": "10:00"
+    },
+    {
+      "day": "thursday",
+      "start": "08:00",
+      "end": "10:00"
+    },
+    {
+      "day": "friday",
+      "start": "08:00",
+      "end": "10:00"
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "name": "Эспрессо",
+      "description": "Крепкий кофе из зерен премиум класса",
+      "category": "Кофе",
+      "price": 120,
+      "pointsCost": 24,
+      "pointsReward": 3,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/espresso.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Латте",
+      "description": "Эспрессо с молоком и молочной пеной",
+      "category": "Кофе",
+      "price": 180,
+      "pointsCost": 36,
+      "pointsReward": 3,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/latte.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Капуччино",
+      "description": "Эспрессо с молочной пеной и корицей",
+      "category": "Кофе",
+      "price": 170,
+      "pointsCost": 34,
+      "pointsReward": 3,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/cappuccino.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Чизкейк",
+      "description": "Нежный чизкейк с ягодным топпингом",
+      "category": "Десерты",
+      "price": 280,
+      "pointsCost": 56,
+      "pointsReward": 3,
+      "isAvailable": true,
+      "isPopular": false,
+      "image": "/images/cheesecake.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Круассан",
+      "description": "Свежая выпечка с шоколадом",
+      "category": "Выпечка",
+      "price": 150,
+      "pointsCost": 30,
+      "pointsReward": 3,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/croissant.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Сэндвич с ветчиной",
+      "description": "Свежий хлеб, ветчина, сыр и овощи",
+      "category": "Еда",
+      "price": 320,
+      "pointsCost": 64,
+      "pointsReward": 3,
+      "isAvailable": true,
+      "isPopular": false,
+      "image": "/images/sandwich.jpg"
+    }
+  ]
+}
+

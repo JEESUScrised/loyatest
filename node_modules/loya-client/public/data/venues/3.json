@@ -1,0 +1,106 @@
+{
+  "id": 3,
+  "venueCode": "VKU",
+  "name": "Бургерная «Вкусно»",
+  "description": "Сочные бургеры и картошка фри",
+  "address": "ул. Гагарина, 8",
+  "logo": "/assets/brands/vkusno.svg",
+  "category": "fastfood",
+  "rating": 4.4,
+  "workingHours": "11:00 - 24:00",
+  "isOpen": true,
+  "pointsPerPurchase": 4,
+  "pointsType": "general",
+  "doublePointsHours": [
+    {
+      "day": "friday",
+      "start": "18:00",
+      "end": "22:00"
+    },
+    {
+      "day": "saturday",
+      "start": "18:00",
+      "end": "22:00"
+    },
+    {
+      "day": "sunday",
+      "start": "18:00",
+      "end": "22:00"
+    }
+  ],
+  "menu": [
+    {
+      "id": 1,
+      "name": "Классический бургер",
+      "description": "Говяжья котлета, салат, помидор, лук, соус",
+      "category": "Бургеры",
+      "price": 320,
+      "pointsCost": 64,
+      "pointsReward": 4,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/burger-classic.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Чизбургер",
+      "description": "Говяжья котлета, сыр, салат, помидор, соус",
+      "category": "Бургеры",
+      "price": 350,
+      "pointsCost": 70,
+      "pointsReward": 4,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/cheeseburger.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Бургер с беконом",
+      "description": "Говяжья котлета, бекон, сыр, салат, соус",
+      "category": "Бургеры",
+      "price": 420,
+      "pointsCost": 84,
+      "pointsReward": 4,
+      "isAvailable": true,
+      "isPopular": false,
+      "image": "/images/burger-bacon.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Картошка фри",
+      "description": "Хрустящая картошка с соусом",
+      "category": "Гарниры",
+      "price": 180,
+      "pointsCost": 36,
+      "pointsReward": 4,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/fries.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Наггетсы",
+      "description": "Куриные наггетсы (6 штук)",
+      "category": "Закуски",
+      "price": 250,
+      "pointsCost": 50,
+      "pointsReward": 4,
+      "isAvailable": true,
+      "isPopular": false,
+      "image": "/images/nuggets.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Кола",
+      "description": "Газированный напиток 0.5л",
+      "category": "Напитки",
+      "price": 120,
+      "pointsCost": 24,
+      "pointsReward": 4,
+      "isAvailable": true,
+      "isPopular": true,
+      "image": "/images/cola.jpg"
+    }
+  ]
+}
+

@@ -1,0 +1,177 @@
+/* Тема для кассирского фронтенда в стиле дизайн-кита */
+
+/* Базовые CSS переменные в стиле дизайн-кита */
+:root {
+  --bg: #0b1118;
+  --card: #101924cc;
+  --text: #e8eef4;
+  --muted: #9fb2c3;
+  --border: #203040;
+  --accent: #64d8cb;
+  --accent2: #b39ddb;
+  --gold1: #ffd778;
+  --gold2: #ffb020;
+  --radius: 16px;
+  --gap: 16px;
+  --shadow: 0 16px 40px rgba(0,0,0,.45);
+  
+  /* Кассирские цвета (зеленые) */
+  --primary-color: #28a745;
+  --primary-hover: #1e7e34;
+  --secondary-color: #6c757d;
+  --secondary-hover: #5a6268;
+}
+
+/* Базовые стили */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.45 Inter, system-ui, -apple-system, 'Segoe UI', Roboto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Заголовки */
+h1, h2, h3 {
+  margin: 0 0 12px 0;
+  color: var(--text);
+}
+
+h1 { font-size: 28px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+
+/* Контейнер */
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+/* Карточки */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+}
+
+/* Кнопки */
+.btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #0b0f14;
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  box-shadow: 0 8px 22px rgba(100,216,203,.25);
+  cursor: pointer;
+  transition: filter .15s, transform .06s, box-shadow .2s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 14px;
+}
+
+.btn:hover:not(:disabled) {
+  filter: brightness(1.08);
+  box-shadow: 0 12px 28px rgba(179,157,219,.3);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px) scale(.98);
+  filter: brightness(.95);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  color: white;
+  box-shadow: 0 8px 22px rgba(40, 167, 69, .25);
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.08);
+  box-shadow: 0 12px 28px rgba(40, 167, 69, .3);
+}
+
+.btn-secondary {
+  background: #0f1720;
+  border: 1px solid #203040;
+  color: #e8eef4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #1a2332;
+  transform: translateY(-1px);
+}
+
+/* Поля ввода */
+.input {
+  flex: 1;
+  min-width: 260px;
+  background: #0f1720;
+  border: 1px solid var(--border);
+  color: #e8eef4;
+  padding: 12px 14px;
+  border-radius: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input::placeholder {
+  color: #7f93a6;
+}
+
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(100, 216, 203, 0.1);
+}
+
+/* Ошибки */
+.error {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  color: #ff6b6b;
+  margin-bottom: 20px;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

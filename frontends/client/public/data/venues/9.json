@@ -1,0 +1,28 @@
+{
+  "id": 9,
+  "venueCode": "COCK",
+  "name": "Бар «Коктейль»",
+  "description": "Креативные коктейли и музыка",
+  "address": "ул. Ночная, 67",
+  "logo": "/assets/brands/cocktail.svg",
+  "category": "bar",
+  "rating": 4.6,
+  "workingHours": "20:00 - 06:00",
+  "isOpen": true,
+  "pointsPerPurchase": 5,
+  "pointsType": "personal",
+  "doublePointsHours": [
+    {
+      "day": "friday",
+      "start": "22:00",
+      "end": "02:00"
+    },
+    {
+      "day": "saturday",
+      "start": "22:00",
+      "end": "02:00"
+    }
+  ],
+  "menu": []
+}
+

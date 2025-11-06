@@ -1,0 +1,17 @@
+{
+  "id": 10,
+  "venueCode": "FAST",
+  "name": "Фастфуд «Быстро»",
+  "description": "Быстрое питание 24/7",
+  "address": "ул. Скоростная, 89",
+  "logo": "/assets/brands/fast.svg",
+  "category": "fastfood",
+  "rating": 4.2,
+  "workingHours": "10:00 - 22:00",
+  "isOpen": true,
+  "pointsPerPurchase": 2,
+  "pointsType": "general",
+  "doublePointsHours": [],
+  "menu": []
+}
+

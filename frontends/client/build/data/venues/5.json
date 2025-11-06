@@ -1,0 +1,28 @@
+{
+  "id": 5,
+  "venueCode": "MEAT",
+  "name": "Стейк-хаус «Мясо»",
+  "description": "Премиальные стейки и вино",
+  "address": "пр. Победы, 78",
+  "logo": "/assets/brands/meat.svg",
+  "category": "restaurant",
+  "rating": 4.7,
+  "workingHours": "18:00 - 02:00",
+  "isOpen": true,
+  "pointsPerPurchase": 8,
+  "pointsType": "general",
+  "doublePointsHours": [
+    {
+      "day": "friday",
+      "start": "19:00",
+      "end": "23:00"
+    },
+    {
+      "day": "saturday",
+      "start": "19:00",
+      "end": "23:00"
+    }
+  ],
+  "menu": []
+}
+

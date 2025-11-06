@@ -1,0 +1,373 @@
+/* Базовые стили для админского фронтенда */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Переменные для тем */
+:root {
+  --primary-color: #6f42c1;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --muted-color: #6c757d;
+  --border-color: #dee2e6;
+  --background-color: #ffffff;
+  --text-color: #212529;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Базовые классы */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #5a2d91;
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  background: var(--muted-color);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background: #545b62;
+}
+
+/* Статистические карточки */
+.stats-overview {
+  margin-bottom: 30px;
+}
+
+.stats-overview h3 {
+  margin-bottom: 20px;
+  color: var(--text-color);
+  font-size: 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 4px solid var(--primary-color);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.stat-icon {
+  font-size: 20px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--muted-color);
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.stat-change {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Графики */
+.charts-section {
+  margin-bottom: 30px;
+}
+
+.chart-row {
+  margin-bottom: 30px;
+}
+
+.revenue-chart,
+.customer-activity {
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+}
+
+.revenue-chart h4,
+.customer-activity h4 {
+  margin-bottom: 20px;
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.chart-container {
+  width: 100%;
+}
+
+/* Информационная секция */
+.info-section {
+  margin-bottom: 30px;
+}
+
+.info-card {
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+}
+
+.info-card h4 {
+  margin-bottom: 16px;
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: var(--light-color);
+  border-radius: var(--border-radius);
+}
+
+.info-label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.info-value {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.badge.success {
+  background: var(--success-color);
+  color: white;
+}
+
+.badge.danger {
+  background: var(--danger-color);
+  color: white;
+}
+
+.badge.warning {
+  background: var(--warning-color);
+  color: var(--dark-color);
+}
+
+/* Ошибки */
+.error {
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  border-radius: var(--border-radius);
+  padding: 12px;
+  margin-bottom: 16px;
+  color: var(--danger-color);
+}
+
+/* Загрузка */
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  margin-top: 16px;
+  color: var(--muted-color);
+}
+
+/* Header */
+.header {
+  background: var(--background-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+  margin-bottom: 20px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: var(--muted-color);
+  margin: 4px 0 0 0;
+}
+
+/* Admin actions */
+.admin-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* Error Boundary */
+.error-boundary {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-boundary h2 {
+  color: var(--danger-color);
+  margin-bottom: 16px;
+}
+
+.error-boundary p {
+  color: var(--muted-color);
+  margin-bottom: 24px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .stat-value {
+    font-size: 24px;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .admin-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
