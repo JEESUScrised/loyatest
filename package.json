@@ -19,7 +19,8 @@
     "build:cashier": "cd frontends/cashier && npm run build",
     "build:venue-admin": "cd frontends/venue-admin && npm run build",
     "build:tech-admin": "cd frontends/tech-admin && npm run build",
-    "clean": "rm -rf node_modules frontends/*/node_modules shared/node_modules"
+    "clean": "rm -rf node_modules frontends/*/node_modules shared/node_modules",
+    "vercel-build": "npm install && cd frontends/client && npm install && npm run build"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
